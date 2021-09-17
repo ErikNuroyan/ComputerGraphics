@@ -207,6 +207,7 @@ void rotate(std::vector<Point>& vertices, const Point& rotationPoint, float angl
     for (auto& p: vertices) {
         p = matMul(finalRotationMatrix, p);
     }
+    
     free(finalRotationMatrix);
 }
 
