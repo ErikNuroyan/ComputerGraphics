@@ -127,29 +127,29 @@ float* getYRotationMatrix(float angle) {
 }
 
 float* getProjectionMatrix(float n, float f, float aspectRatio, float fov = 90) {
-    float* rotationMatrix = static_cast<float*>(malloc(16 * sizeof(float)));
+    float* projectionMatrix = static_cast<float*>(malloc(16 * sizeof(float)));
     float fovRadian = fov * M_PI / 180;
-    rotationMatrix[0] = 1 / (tan(fovRadian / 2) * aspectRatio);
-    rotationMatrix[1] = 0.0;
-    rotationMatrix[2] = 0.0;
-    rotationMatrix[3] = 0.0;
+    projectionMatrix[0] = 1 / (tan(fovRadian / 2) * aspectRatio);
+    projectionMatrix[1] = 0.0;
+    projectionMatrix[2] = 0.0;
+    projectionMatrix[3] = 0.0;
     
-    rotationMatrix[4] = 0.0;
-    rotationMatrix[5] = 1 / tan(fovRadian / 2);
-    rotationMatrix[6] = 0.0;
-    rotationMatrix[7] = 0.0;
+    projectionMatrix[4] = 0.0;
+    projectionMatrix[5] = 1 / tan(fovRadian / 2);
+    projectionMatrix[6] = 0.0;
+    projectionMatrix[7] = 0.0;
     
-    rotationMatrix[8] = 0.0;
-    rotationMatrix[9] = 0.0;
-    rotationMatrix[10] = -(f + n) / (f - n);
-    rotationMatrix[11] = -2 * f * n / (f - n);
+    projectionMatrix[8] = 0.0;
+    projectionMatrix[9] = 0.0;
+    projectionMatrix[10] = -(f + n) / (f - n);
+    projectionMatrix[11] = -2 * f * n / (f - n);
     
-    rotationMatrix[12] = 0.0;
-    rotationMatrix[13] = 0.0;
-    rotationMatrix[14] = -1.0;
-    rotationMatrix[15] = 0.0;
+    projectionMatrix[12] = 0.0;
+    projectionMatrix[13] = 0.0;
+    projectionMatrix[14] = -1.0;
+    projectionMatrix[15] = 0.0;
     
-    return rotationMatrix;
+    return projectionMatrix;
 }
 
 
