@@ -206,7 +206,7 @@ class Cube {
 public:
     Cube(std::initializer_list<Polygon> il) {
         polygons.insert(polygons.end(), il);
-        modelMatrix = getTranslationMatrix(0, 0, 5);
+        modelMatrix = getTranslationMatrix(0, 0, -5);
     }
     
     const float* getModelMatrix() const {
@@ -368,11 +368,11 @@ int main(int argc, const char * argv[]) {
             pipeline(c, cam, img, width, height);
         }
         else if (k == 63232) { //up arrow is pressed
-            cam.translate(-0.2);
+            cam.translate(0.2);
             pipeline(c, cam, img, width, height);
         }
         else if (k == 63233) { //down arrow is pressed
-            cam.translate(0.2);
+            cam.translate(-0.2);
             pipeline(c, cam, img, width, height);
         }
         else if (k == 27) { //ESC is pressed
