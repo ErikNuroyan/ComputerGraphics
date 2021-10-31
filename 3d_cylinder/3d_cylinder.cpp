@@ -292,11 +292,6 @@ int main(){
                 float dy = ypos - curPosY;
                 
                 theta -= glm::radians(dx);
-                glm::vec3& cameraPos = *(winCont->cameraPos);
-                cameraPos[0] = 5.0 * cos(phi) * sin(theta);
-                cameraPos[1] = 5.0 * sin(phi);
-                cameraPos[2] = 5.0 * cos(phi) * cos(theta);
-                
                 phi += glm::radians(dy);
                 if (phi > M_PI / 2) {
                     phi = glm::radians(90.0f);
@@ -305,6 +300,7 @@ int main(){
                     phi = glm::radians(-90.0f);
                 }
                 
+                glm::vec3& cameraPos = *(winCont->cameraPos);
                 cameraPos[0] = 5.0 * cos(phi) * sin(theta);
                 cameraPos[1] = 5.0 * sin(phi);
                 cameraPos[2] = 5.0 * cos(phi) * cos(theta);
